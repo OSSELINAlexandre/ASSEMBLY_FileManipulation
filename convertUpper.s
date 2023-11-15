@@ -44,7 +44,7 @@ Open_Output_File:
 Store_FileDescriptor_Out:
 	movq %rax, ST_FD_OUT(%rbp)
 
-Reading_From_Int
+Reading_From_Int:
 	movq $SYS_READ, %rax
 	movq ST_FD_IN(%rbp), %rdi
 	movq $BUFFER_DATA, %rsi
@@ -99,9 +99,9 @@ Conversion_To_Upper:
 conversion:
 	movb (%rax,%rdi,1), %cl
 	cmpb $'a' , %cl
-	jl   NEXT_BYTE
+	jl   Next_Byte
 	cmpb $'z' , %cl
-	jg   NEXT_BYTE
+	jg   Next_Byte
 	addb $UPPER_CONVERSION, %cl
 	movb %cl, (%rax,%rdi,1)
 
