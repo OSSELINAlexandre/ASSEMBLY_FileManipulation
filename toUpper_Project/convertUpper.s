@@ -20,7 +20,7 @@
 .global _start
 
 _start:
-	mov %rsp, %rbp
+	movq %rsp, %rbp
 	subq $ST_SIZE_RESERVE, %rsp
 
 Open_Files:
@@ -99,14 +99,14 @@ Conversion_To_Upper:
 conversion:
 	movb (%rax,%rdi,1), %cl
 	cmpb $'a' , %cl
-	jl   Next_Byte
+	jl   next_byte
 	cmpb $'z' , %cl
-	jg   Next_Byte
+	jg   next_byte
 	addb $UPPER_CONVERSION, %cl
 	movb %cl, (%rax,%rdi,1)
 
-Next_Byte:
-	incq  %rdi	
+next_byte:
+	incq %rdi	
 	cmpq %rdi, %rbx
 	jne conversion
 	
