@@ -25,15 +25,15 @@ create_or_open_file:
 	movq  %rax, FILEDESCRIPTOR_LOCATION(%rbp)
 	
 	pushq FILEDESCRIPTOR_LOCATION(%rbp)
-	pushq record1
+	pushq $record1
 	callq write_to_file
 	
 	pushq FILEDESCRIPTOR_LOCATION(%rbp)
-	pushq record2
+	pushq $record2
 	callq write_to_file
 	
 	pushq FILEDESCRIPTOR_LOCATION(%rbp)
-	pushq record3
+	pushq $record3
 	callq write_to_file
 
 exit_system:

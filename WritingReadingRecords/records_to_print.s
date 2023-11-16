@@ -8,7 +8,7 @@ record1:
 .rept 33
 .byte 0
 .endr
-.ascii "Avenue De France, Kremlin-Bîcetre, 94000, France\0"
+.ascii "Avenue De France, Kremlin-Bîcetre, 94000, France\n"
 .rept 191
 .byte 0
 .endr
@@ -23,7 +23,7 @@ record2:
 .rept 32
 .byte 0
 .endr
-.ascii "Avenue De Montorgeuil, Paris, 75017, France\0"
+.ascii "Avenue De Montorgeuil, Paris, 75017, France\n"
 .rept 191
 .byte 0
 .endr
@@ -38,7 +38,7 @@ record3:
 .rept 30
 .byte 0
 .endr
-.ascii "4th avenue, Blaine, Minnessota, USA\0"
+.ascii "4th avenue, Blaine, Minnessota, USA\n"
 .rept 204
 .byte 0
 .endr

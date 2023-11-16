@@ -1,7 +1,7 @@
 .include "linux.s"
 
-.equ ST_WRITE_BUFFER, 16
-.equ ST_FILEDES, 24
+.equ ST_WRITE_BUFFER, 24
+.equ ST_FILEDES, 16
 
 .global write_to_file
 .type write_to_file, @function
@@ -17,4 +17,4 @@ write_to_file:
 	
 	movq %rbp, %rsp
 	popq %rbp
-	ret
+	retq
