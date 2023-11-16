@@ -2,11 +2,6 @@
 .include "records_definition.s"
 .include "records_to_print.s"
 
-.section .data
-
-filename:
-	.ascii "data.dat\0"
-
 .section .text
 .global _start
 

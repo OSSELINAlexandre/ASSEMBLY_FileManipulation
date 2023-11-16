@@ -1,7 +1,7 @@
 .include "linux.s"
 
-.equ ST_WRITE_BUFFER, 24
-.equ ST_FILEDES, 16
+.equ RECORD_POINTER, 16
+.equ ST_FILEDESCRIPTOR, 24
 
 .global write_to_file
 .type write_to_file, @function
@@ -10,8 +10,8 @@ write_to_file:
 	movq  %rsp, %rbp
 	
 	movq $SYS_WRITE, %rax
-	movq ST_FILEDES(%rbp), %rdi
-	movq ST_WRITE_BUFFER(%rbp), %rsi
+	movq ST_FILEDESCRIPTOR(%rbp), %rdi
+	movq RECORD_POINTER(%rbp), %rsi
 	movq $324, %rdx
 	syscall	
 	

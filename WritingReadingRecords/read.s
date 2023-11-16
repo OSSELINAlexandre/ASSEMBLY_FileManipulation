@@ -1,14 +1,8 @@
 .include "linux.s"
 .include "records_definition.s"
 
-.section .data
-
-filename:
-	.ascii "data.dat\0"
-
 .section .bss
-	
-	lcomm buffer_data, 1000
+	.lcomm buffer_data, 1000
 	
 .section .text
 
@@ -34,7 +28,7 @@ open_input_file:
 .write_output:
 	movq $1, %rax
 	movq $1, %rdi
-	leaq $buffer, %rsi
+	movq $buffer_data, %rsi
 	movq $1000, %rdx
 	syscall	
 
@@ -46,5 +40,4 @@ close_file:
 exit_system:
 	movq $60, %rax
 	movq $0, %rdi
-	syscall
-	
+	syscall	
