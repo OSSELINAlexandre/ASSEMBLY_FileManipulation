@@ -4,11 +4,11 @@ Third project in assembly code. The purpose of this project is to manipulate fil
 
 There is two projects.
 
-###toUpper
+### toUpper
 
 toUpper is a program that transform an input text into upper case in the output text. 
 
-###WritingReadingRecords
+### WritingReadingRecords
 
 WritingReadingRecords is composed of two programs. One that writes into a file a predefined structure. A second that reads a structure from a file.
 
